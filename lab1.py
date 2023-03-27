@@ -34,7 +34,7 @@ print("vamos a sumar esto" + "con esto otro")
 # Continuar una instrucción en varios renglones 
 #===============================================
 if 100 > 99 and \
-   200 <= 300 and \ 
+   200 <= 300 and \
    True != False:
         print('Hello World!')
 
