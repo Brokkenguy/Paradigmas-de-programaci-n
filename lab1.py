@@ -525,7 +525,7 @@ def greet(**person):
     #=====================================================
     print('Hello', person['firstname'], person['lastname'])
 
-greet(fisrtname='Steve', lastname='Jobs')
+greet(firstname='Steve', lastname='Jobs')
 greet(lastname='Jobs', firstname='Steve')
 greet(firstname='Bill', lastname='Gates', age=55) # Se pueden pasar más parámetros de los necesarios 
 
@@ -556,7 +556,7 @@ print(total)
 #  nombre de la función = lambda variable : función
 #===================================================
 x_al_cuadrado = lambda x : x * x
-a1 = x_añ_cuadrado(5)
+a1 = x_al_cuadrado(5)
 print(a1)
 
 #=============================
@@ -570,4 +570,43 @@ sumas = lambda *x: x[0]+x[1]+x[2]+x[3]
 print (sumas(100,200,300,400))
 
 
+#=========================================
+# Uso de una función anónima
+# El argumento va afuera entre paréntesis
+#=========================================
+print((lambda x: x*x)(6)) # Función anonima
+
+#================================
+# Función con variable global
+# EVITE EL EXCESO !!!!!
+#================================
+name = 'Steve'
+def greet():
+    global name  #Para utilizar una variable global (que viene de fuera del bloque)
+    name = 'Bill'
+    print('Hello ', name)
+
+greet()
+
 #=================================
+#  Algoritmo 1
+#=================================
+#  Serie exponencial
+#  Factorización de x 
+#  Negativos con función inversa
+#=================================
+n = 200
+x = -100.0
+flag = False
+if x<0:
+    flag = True
+    x = -x 
+s = 1.0
+for i in range (n,0,-1):
+    s *= x/float(i)
+    s += 1.0
+if flag == True:
+    s = 1/s
+print(s)
+
+
