@@ -1,3 +1,9 @@
+from aplicacion.repositorio.repositoriodeusuarios import RepositorioDeUsuarios
+from aplicacion.modelos.usuario import Usuario
+
+#================================================
+#  Implementa la interface RepositorioDeUsuarios
+#================================================
 class SistemaDeArchivos(RepositorioDeUsuarios):
     __directorio: str
 
@@ -14,4 +20,3 @@ class SistemaDeArchivos(RepositorioDeUsuarios):
 
     def cerrar(mi) -> None:
         print("Cerrando el archivo")
-
