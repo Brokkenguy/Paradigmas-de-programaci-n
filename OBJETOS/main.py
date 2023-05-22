@@ -17,4 +17,19 @@ try:
   print(cliente.imprimirInfo())
 #===============================================
 # Exception es el objeto más general de error
+#===============================================
+except Exception as e:
+    print("Error: " + str(e))
 
+#======================================
+# Error por usar un atrinbuto privado
+#======================================
+try:
+  print(cliente.__nombres)
+except Exception as ex:
+    print("Error: " + str(ex))
+
+#===================
+#  Forma correcta
+#===================
+print(cliente.nombres)
