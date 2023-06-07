@@ -5,7 +5,7 @@
 #=====================================
 import numpy as np
 from Curva import Curva,zspline
-import matplotlib.pyplt as plt
+import matplotlib.pyplot as plt
 import math
 
 #======================
@@ -18,7 +18,7 @@ dim:np.int32 = 2
 # Memoria para puntos
 puntos = np.zeros(dim*nump,dtype=np.float64)
 # Parametrización
-X = np.linspace(0.0,2*np.pi,nump*1)
+X = np.linspace(0.0,2*np.pi,nump+1)
 # Coordenada x
 puntos[0:nump] = np.cos(X[0:nump]) + 0.0*np.sin(2*X[0:nump])
 # Coordenada y
@@ -39,4 +39,10 @@ plt.scatter(puntos[0:nump],puntos[nump:2*nump],marker='o',color='black')
 plt.xlabel("Coordenada x")
 plt.ylabel("Coordenada y")
 plt.title("Curva cerrada Z-spline en 2D")
-plt.show()
+plt.show() 
+
+#====================================================
+# linea de codigo para guardar la curva como imagen
+#====================================================
+plt.savefig("mygraph.png")
+
