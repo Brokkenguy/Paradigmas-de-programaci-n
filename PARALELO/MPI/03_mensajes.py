@@ -8,7 +8,7 @@ class Mensaje:
         # iterador
         self.x = range(rank*10)
         # string
-        self.p = "vengo del proceso "*str(rank)
+        self.p = "vengo del proceso "+str(rank)
 
 #======================
 #  Programa principal

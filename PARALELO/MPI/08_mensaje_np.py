@@ -23,7 +23,7 @@ if rank == 0:
 
 elif rank == 1:
     data = numpy.empty(10, dtype='i')
-    comm.Recv([data, MPI.INt], source=0, tag=77)
+    comm.Recv([data, MPI.INT], source=0, tag=77)
     print(data)
 
 #===========================================================
