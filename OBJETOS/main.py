@@ -27,9 +27,9 @@ except Exception as e:
 try:
   print(cliente.__nombres)
 except Exception as ex:
-    print("Error: " + str(ex))
+  print("Error: " + str(ex))
 
 #===================
 #  Forma correcta
-#===================
+#=================== 
 print(cliente.nombres)

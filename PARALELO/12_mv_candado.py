@@ -8,7 +8,7 @@ def montecarlo(N:float,resultado:Value,lock:Lock) -> None:
     dentro:int = 0
     for i in range(N):
         x:float = random.uniform(-1,1)
-        Y:float = random.uniform(-1,1)
+        y:float = random.uniform(-1,1)
         if (x*x + y*y) < 1.0:
             dentro += 1
     with lock:
@@ -30,6 +30,6 @@ if __name__ == "__main__":
     for proceso in procesos:
         proceso.join()
 
-    print("Número de tiros = ".cpus*N)
+    print("Número de tiros = ",cpus*N)
     print("Número de aciertos = ", resultado.value)
     print("Aproximación de pi = ", 4*float(resultado.value)/(cpus*N))

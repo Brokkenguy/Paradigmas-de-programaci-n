@@ -16,7 +16,7 @@ if __name__ == "__main__":
     # Candado para evitar que dos procesos se empalmen
     candado = Lock()
     # Número común a los procesos, i de entero, comienza siendo 0
-    numero.compartido = Value('i', 0)
+    numero_compartido = Value('i', 0)
     print("Al principio vale = ", numero_compartido.value)
     p1 = Process(target=sumale100, args=(numero_compartido,candado))
     p2 = Process(target=sumale100, args=(numero_compartido,candado))

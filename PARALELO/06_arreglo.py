@@ -2,7 +2,7 @@
 # Ejemplo de comunicación bloqueada a un arreglo compartido
 # Uso de candados (locks)
 #============================================================
-from muliprocessing import Process, Array, Lock
+from multiprocessing import Process, Array, Lock
 import time
 
 def sumale100(numeros,candado):

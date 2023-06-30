@@ -21,7 +21,8 @@ class Nodo():
 
     def get_alto(self):
         return self.alto
-    def ger_particulas(self):
+
+    def get_particulas(self):
         return self.particulas
 
 def subdivision_recursiva(nodo:Nodo, k:int):
@@ -41,11 +42,11 @@ def subdivision_recursiva(nodo:Nodo, k:int):
 
     p = cuantas_contiene(nodo.x0+w_, nodo.y0, w_, h_, nodo.particulas)
     nodo.x3 = Nodo(nodo.x0+w_, nodo.y0, w_, h_, p)
-    subdivision_recurvsiva(nodo.x3, k)
+    subdivision_recursiva(nodo.x3, k)
 
     p = cuantas_contiene(nodo.x0+w_, nodo.y0+h_, w_, h_, nodo.particulas)
     nodo.x4 = Nodo(nodo.x0+w_, nodo.y0+h_, w_, h_, p)
-    subdivision_recurvsiva(nodo.x4, k)
+    subdivision_recursiva(nodo.x4, k)
     
     nodo.hijos = [nodo.x1, nodo.x2, nodo.x3, nodo.x4]
 
@@ -68,8 +69,8 @@ def encontrar_hijos(nodo):
 class QTree():
     def __init__(self, k:int, n:int):
         self.umbral = k
-        self.partiuclas = [particula(random.uniform(0, 10), random.uniform(0, 10)) for x in range(n)]
-        self.root = NOdo(0, 0, 10, 10, self.particulas)
+        self.particulas = [Particula(random.uniform(0, 10), random.uniform(0, 10)) for x in range(n)]
+        self.root = Nodo(0, 0, 10, 10, self.particulas)
 
     def add_particula(self, x:float, y:float):
         self.particulas.append(Particula(x, y))
@@ -100,5 +101,5 @@ class QTree():
 qtree = QTree(2,200)
 qtree.subdividir()
 qtree.visualizacion()
-
+plt.savefig("mygraph2.png")
 

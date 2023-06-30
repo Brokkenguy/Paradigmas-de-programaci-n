@@ -27,4 +27,4 @@ if __name__ == "__main__":
     p2.start()
     p1.join()
     p2.join()
-    print("Al final vale = ", numero_compartido.value1)
+    print("Al final vale = ", numero_compartido.value)

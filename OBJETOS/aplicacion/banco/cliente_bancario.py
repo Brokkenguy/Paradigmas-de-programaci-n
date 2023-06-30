@@ -43,7 +43,7 @@ class ClienteBancario:
         if balanceDeCuenta < 0:
             raise Exception("El balance en la cuenta no puede ser negativo")
 
-    def guardadDinero(self, cantidad:float) -> None:
+    def guardarDinero(self, cantidad:float) -> None:
         self.__balanceDeCuenta = self.__balanceDeCuenta + cantidad
         self.__mandarEmail("----guardando depósito----"," se recibieron " + str(cantidad))
         self.__enviarBalanceAlBanco(cantidad)
